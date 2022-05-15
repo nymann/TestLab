@@ -1,9 +1,9 @@
 package dk.sdu.mmmi.cbse.enemysystem;
 
+import dk.sdu.mmmi.cbse.common.data.EntityType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class EnemyTest {
     private Enemy enemyUnderTest;
@@ -30,6 +30,7 @@ class EnemyTest {
 
     @Test
     void getEntityType() {
-        assertFalse(enemyUnderTest.canShoot(-100));
+        assertNotSame(enemyUnderTest.getEntityType(), EntityType.ASTEROID);
+        assertSame(enemyUnderTest.getEntityType(), EntityType.SHIP);
     }
 }
